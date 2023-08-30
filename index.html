@@ -302,23 +302,11 @@
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
   <script>
-    document.getElementById('playLink').addEventListener('click', function() {
-      var audioPlayer = document.getElementById('audioPlayer');
-      
-      if (audioPlayer.paused) {
-        audioPlayer.play();
-        document.getElementById('playLink').innerText = 'Đang phát nhạc';
-      } else {
-        audioPlayer.pause();
-        document.getElementById('playLink').innerText = 'Nhấp để phát nhạc';
-      }
-    });
-    
-    document.getElementById('audioPlayer').addEventListener('ended', function() {
-      document.getElementById('playLink').innerText = 'Nhấp để phát lại nhạc';
-    });
-    </script>
-    
+    window.onload = function() {
+      var audio = document.getElementById("background-audio");
+      audio.play();
+    };
+  </script>
   
   
 
