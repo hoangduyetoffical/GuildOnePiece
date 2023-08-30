@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico" type="image/x-icon"/>
   <link rel="shortcut icon" href="op.png" type="image/x-icon"/>
+
+  <audio id="background-music" loop autoplay>
+    <source src="op1.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ nguồn âm thanh.
+  </audio>
+  
+
   <head>
 
     <meta charset="utf-8">
@@ -292,6 +299,20 @@
   <script src="assets/js/tabs.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script>
+    // Đợi cho trang web tải hoàn thành trước khi thao tác với âm thanh
+    window.addEventListener('DOMContentLoaded', (event) => {
+      // Lấy thẻ audio thông qua id
+      const audio = document.getElementById('background-music');
+      
+      // Tắt âm thanh
+      audio.volume = 0; // Bạn có thể đặt âm lượng khác nếu muốn
+      
+      // Bắt đầu chạy âm thanh
+      audio.play();
+    });
+  </script>
+  
 
 
   </body>
