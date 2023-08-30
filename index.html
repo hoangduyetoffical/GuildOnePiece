@@ -6,10 +6,12 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon"/>
   <link rel="shortcut icon" href="op.png" type="image/x-icon"/>
 
-  <audio id="background-music" loop autoplay>
-    <source src="op1.mp3" type="audio/mpeg">
-    Trình duyệt của bạn không hỗ trợ nguồn âm thanh.
+  <a id="playLink" href="https://hoangduyetoffical.github.io/GuildOnePiece/">Nhấp để phát nhạc</a>
+  <audio id="audioPlayer" controls autoplay loop>
+  <source src="op1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
   </audio>
+
   
 
   <head>
@@ -300,11 +302,23 @@
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
   <script>
-    window.onload = function() {
-      var audio = document.getElementById("background-audio");
-      audio.play();
-    };
-  </script>
+    document.getElementById('playLink').addEventListener('click', function() {
+      var audioPlayer = document.getElementById('audioPlayer');
+      
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        document.getElementById('playLink').innerText = 'Đang phát nhạc';
+      } else {
+        audioPlayer.pause();
+        document.getElementById('playLink').innerText = 'Nhấp để phát nhạc';
+      }
+    });
+    
+    document.getElementById('audioPlayer').addEventListener('ended', function() {
+      document.getElementById('playLink').innerText = 'Nhấp để phát lại nhạc';
+    });
+    </script>
+    
   
   
 
