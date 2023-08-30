@@ -300,18 +300,12 @@
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
   <script>
-    // Đợi cho trang web tải hoàn thành trước khi thao tác với âm thanh
-    window.addEventListener('DOMContentLoaded', (event) => {
-      // Lấy thẻ audio thông qua id
-      const audio = document.getElementById('background-music');
-      
-      // Tắt âm thanh
-      audio.volume = 0; // Bạn có thể đặt âm lượng khác nếu muốn
-      
-      // Bắt đầu chạy âm thanh
+    window.onload = function() {
+      var audio = document.getElementById("background-audio");
       audio.play();
-    });
+    };
   </script>
+  
   
 
 
